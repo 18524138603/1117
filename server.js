@@ -33,11 +33,9 @@ app.get('/api/health', (req, res) => {
   });
 });
 app.get('/', (req, res) => {
-  res.json({
-    message: "欢迎访问接口服务",
-    availableEndpoints: ["/api/projects", "/api/messages"]
-  });
+  res.send('欢迎访问接口服务,availableEndpoints: ["/api/projects", "/api/messages"]');
 });
+app.listen(3000);
 
 // 错误处理中间件
 app.use(errorHandler);
