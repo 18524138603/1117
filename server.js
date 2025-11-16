@@ -32,6 +32,12 @@ app.get('/api/health', (req, res) => {
     message: 'API is running'
   });
 });
+app.get('/', (req, res) => {
+  res.json({
+    message: "欢迎访问接口服务",
+    availableEndpoints: ["/api/projects", "/api/messages"]
+  });
+});
 
 // 错误处理中间件
 app.use(errorHandler);
